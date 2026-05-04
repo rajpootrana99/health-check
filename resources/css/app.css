@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-size: 15px; /* Slightly reduced base size */
+    }
+    body {
+        @apply bg-dark text-white font-sans antialiased selection:bg-primary selection:text-dark;
+        letter-spacing: 0 !important; /* Remove letter spacing globally */
+    }
+}
+
+@layer components {
+    .glass {
+        @apply bg-dark-surface/80 backdrop-blur-2xl border border-dark-border;
+    }
+
+    .stat-card {
+        @apply glass rounded-2xl p-6 transition-all duration-300;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-dark font-bold px-5 py-2.5 rounded-xl transition-all duration-300 hover:bg-primary-hover active:scale-[0.98] flex items-center justify-center gap-2 text-sm;
+    }
+
+    .btn-secondary {
+        @apply bg-dark-surface border border-dark-border text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 hover:bg-dark-border active:scale-[0.98] flex items-center justify-center gap-2 text-sm;
+    }
+
+    .card {
+        @apply glass rounded-3xl overflow-hidden;
+    }
+
+    .table-header {
+        @apply text-dark-muted font-bold text-xs px-6 py-4 text-left;
+    }
+
+    .table-cell {
+        @apply px-6 py-4 text-sm border-t border-dark-border;
+    }
+
+    .badge {
+        @apply px-2 py-0.5 rounded-md text-[11px] font-bold;
+    }
+}
+
+/* Typography Refinement */
+.text-readable {
+    @apply leading-normal text-sm;
+}
+
+.heading-display {
+    @apply font-bold text-white leading-tight;
+}
+
+/* Remove all tracking utilities */
+.tracking-widest, .tracking-wider, .tracking-widest, .tracking-tighter, .tracking-tight {
+    letter-spacing: 0 !important;
+}
